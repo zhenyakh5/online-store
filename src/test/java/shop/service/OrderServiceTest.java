@@ -104,5 +104,27 @@ class OrderServiceTest {
 
         assertEquals(5, product.getStockQuantity());
     }
+
+    @Test
+    void testGetPriceWithDiscount_ValidDiscount() {
+        // Создаем товар за 1000 рублей
+        Product product = new Product(1, "Ноутбук", 1000.0, 10);
+
+        // Применяем скидку 20%
+        double finalPrice = product.getPriceWithDiscount(20.0);
+
+        // Ожидаем 800 рублей
+        assertEquals(800.0, finalPrice, 0.01);
+    }
+
+    @Test
+    void testGetPriceWithDiscount_InvalidDiscount() {
+        Product product = new Product(1, "Ноутбук", 1000.0, 10);
+
+        // Проверяем, что при некорректной скидке (больше 100%) вылетит ошибка
+        assertThrows(IllegalArgumentException.class, () -> {
+            product.getPriceWithDiscount(150.0);
+        });
+    }
 }
 

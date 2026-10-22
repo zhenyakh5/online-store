@@ -32,4 +32,11 @@ public class Product {
     public void setStockQuantity(int stockQuantity) {
         this.stockQuantity = stockQuantity;
     }
+
+    public double getPriceWithDiscount(double discountPercent) {
+        if (discountPercent < 0 || discountPercent > 100) {
+            throw new IllegalArgumentException("Скидка должна быть от 0 до 100 процентов");
+        }
+        return price - (price * discountPercent / 100);
+    }
 }
