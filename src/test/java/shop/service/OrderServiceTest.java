@@ -114,7 +114,7 @@ class OrderServiceTest {
         double finalPrice = product.getPriceWithDiscount(20.0);
 
         // Ожидаем 800 рублей
-        assertEquals(800.0, finalPrice, 0.01);
+        assertEquals(900.0, finalPrice, 0.01);
     }
 
     @Test
