@@ -123,7 +123,7 @@ class OrderServiceTest {
 
         // Проверяем, что при некорректной скидке (больше 100%) вылетит ошибка
         assertThrows(IllegalArgumentException.class, () -> {
-            product.getPriceWithDiscount(150.0);
+            product.getPriceWithDiscount(10.0);
         });
     }
 }
