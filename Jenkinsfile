@@ -24,6 +24,12 @@ pipeline {
             }
         }
 
+        stage('Static Analysis') {
+            steps {
+                bat 'mvn checkstyle:check'
+            }
+        }
+
         stage('Test') {
             steps {
                 bat 'mvn test'
