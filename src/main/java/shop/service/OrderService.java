@@ -36,7 +36,9 @@ public class OrderService {
         if (quantity <= 0) {
             LOG.warn("Некорректная операция: запрошено quantity={} для productId={}", 
                     quantity, productId);
-            throw new IllegalArgumentException("Кол-во запрашиваемого товара должно быть больше нуля.");
+            // Строка ниже была разбита на две, чтобы пройти проверку LineLength
+            throw new IllegalArgumentException(
+                    "Кол-во запрашиваемого товара должно быть больше нуля.");
         }
 
         if (product.getStockQuantity() < quantity) {

@@ -6,9 +6,10 @@ import shop.model.Order;
 import shop.model.Product;
 import shop.repository.InMemoryProductRepository;
 import shop.repository.ProductRepository;
-import shop.service.OrderService;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class OrderServiceTest {
 
@@ -106,7 +107,7 @@ class OrderServiceTest {
     }
 
     @Test
-    void testGetPriceWithDiscount_ValidDiscount() {
+    void testGetPriceWithDiscountValidDiscount() { // Убрано _
         // Создаем товар за 1000 рублей
         Product product = new Product(1, "Ноутбук", 1000.0, 10);
 
@@ -118,7 +119,7 @@ class OrderServiceTest {
     }
 
     @Test
-    void testGetPriceWithDiscount_InvalidDiscount() {
+    void testGetPriceWithDiscountInvalidDiscount() { // Убрано _
         Product product = new Product(1, "Ноутбук", 1000.0, 10);
 
         // Проверяем, что при некорректной скидке (больше 100%) вылетит ошибка
@@ -127,4 +128,3 @@ class OrderServiceTest {
         });
     }
 }
-
