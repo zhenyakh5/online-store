@@ -41,5 +41,6 @@ pipeline {
                 bat 'mvn package -DskipTests'
             }
         }
+
     }
 }
