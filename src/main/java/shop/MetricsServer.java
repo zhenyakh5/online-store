@@ -16,8 +16,8 @@ public class MetricsServer {
         // Привязываем его к глобальному реестру Micrometer
         Metrics.addRegistry(registry);
         
-        // Запускаем HTTP-сервер на порту 8080
-        HTTPServer server = new HTTPServer(8080);
-        System.out.println("Metrics server started on http://localhost:8080/metrics");
+        // Запускаем HTTP-сервер на порту 8090
+        HTTPServer server = new HTTPServer(8090);
+        System.out.println("Metrics server started on http://localhost:8090/metrics");
     }
 }
