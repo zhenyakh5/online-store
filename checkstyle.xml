@@ -12,11 +12,6 @@
         <property name="eachLine" value="true"/>
     </module>
 
-    <module name="LineLength">
-        <property name="max" value="100"/>
-        <property name="ignorePattern" value="^package.*|^import.*|http://|https://"/>
-    </module>
-
     <module name="TreeWalker">
         <module name="AvoidStarImport"/>
         <module name="UnusedImports"/>
